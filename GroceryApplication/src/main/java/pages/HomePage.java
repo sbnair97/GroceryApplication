@@ -21,6 +21,7 @@ public class HomePage
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']") WebElement moreInfo;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") WebElement newsMoreInfo;
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact' and @class='small-box-footer']") WebElement contactMoreInfo;
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy' and @class='small-box-footer']") WebElement manageDeliveryBoyInfo;
 	public HomePage clickAdmin()
 	{
 		admin.click();
@@ -45,5 +46,10 @@ public class HomePage
 	{
 		contactMoreInfo.click();
 		return new ManageContactPage(driver);
+	}
+	public ManageDeliveryBoyPage clickDeliveryBoyMoreInfo()
+	{
+		manageDeliveryBoyInfo.click();
+		return new ManageDeliveryBoyPage(driver);
 	}
 }
