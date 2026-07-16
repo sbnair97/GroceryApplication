@@ -5,9 +5,9 @@
 <parameter name="browsers" value="Chrome"></parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="mainproject.LoginTest">
+			<class name="mainproject.ManageDeliveryBoyTest">
 				<methods>
-					<include name="userLoginWithInValidCredentials"></include>
+					<include name="verifyWhetherUserIsAbleToAddNewDeliveryBoy"></include>
 				</methods>
 			</class>
 		</classes>

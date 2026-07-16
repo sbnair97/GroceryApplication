@@ -29,7 +29,8 @@ public class ManageDeliveryBoyTest extends Base
 		String fullNameValue = rd.generateFullName();
 		String emailIdValue = rd.generateRandomEmailId();
 		String phoneNumberValue = rd.getRandomPhoneNumber();
-		String addressValue = ExcelUtility.getStringData(0, 0, "ContactAddress");
+		//String addressValue = ExcelUtility.getStringData(0, 0, "ContactAddress");
+		String addressValue = rd.generateRandomAddress();
 		String newUsernameValue = rd.generateRandomUsername();
 		String newPasswordValue = rd.generateRandomPassword();	
 		mdb.clickNew().enterFullName(fullNameValue).enterEmailId(emailIdValue).enterPhone(phoneNumberValue).enterNewAddress(addressValue).enterNewUsername(newUsernameValue).enterNewPassword(newPasswordValue).clickSaveUser();

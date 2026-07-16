@@ -26,4 +26,8 @@ public class RandomDataUtility
 	{
 		return fk.phoneNumber().cellPhone();
 	}
+	public String generateRandomAddress()
+	{
+		return fk.address().streetAddress();
+	}
 }
