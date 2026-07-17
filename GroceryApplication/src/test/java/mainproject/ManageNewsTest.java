@@ -27,8 +27,7 @@ public class ManageNewsTest extends Base
 		np=hp.clickNewsMoreInfo();
 		np.clickNew();
 		String newNewsValue = ExcelUtility.getStringData(0, 0, "News");
-		np.enterNewNews(newNewsValue);
-		np.clickSaveNews();
+		np.enterNewNews(newNewsValue).clickSaveNews();
 		String actual = np.verifyAddNewsAlertIsDisplayed();
 		String expected = "×\nAlert!\nNews Created Successfully";
 		Assert.assertEquals(actual,expected, Constant.ADDNEWNEWSERROR);
@@ -44,8 +43,7 @@ public class ManageNewsTest extends Base
 		np=hp.clickNewsMoreInfo();
 		np.clickSearch();
 		String newNewsValue = ExcelUtility.getStringData(0, 0, "News");
-		np.enterNewsToSearch(newNewsValue);
-		np.clickSearchNews();
+		np.enterNewsToSearch(newNewsValue).clickSearchNews();
 		String actual = np.verifySearchedNewsDisplayed();
 		String expected = newNewsValue;
 		Assert.assertEquals(actual,expected, Constant.NEWSNOTFOUNDERROR);

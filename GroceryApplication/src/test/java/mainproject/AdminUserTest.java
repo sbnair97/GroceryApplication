@@ -29,10 +29,7 @@ public class AdminUserTest extends Base
 		RandomDataUtility rd = new RandomDataUtility();
 		String newUsernameValue = rd.generateRandomUsername();
 		String newPasswordValue = rd.generateRandomPassword();
-		ap.enterNewUsername(newUsernameValue);
-		ap.enterNewPassword(newPasswordValue);
-		ap.selectUserType();
-		ap.clickSaveUser();
+		ap.enterNewUsername(newUsernameValue).enterNewPassword(newPasswordValue).selectUserType().clickSaveUser();
 		String actual = ap.verifyAddUserAlertIsDisplayed();
 		String expected = "×\nAlert!\nUser Created Successfully";
 		Assert.assertEquals(actual,expected, Constant.ADDNEWADMINUSERERROR);
@@ -48,9 +45,7 @@ public class AdminUserTest extends Base
 		ap=hp.clickAdminMoreInfo();
 		ap.clickSearch();	
 		String usernameToSearch = ExcelUtility.getStringData(0, 0, "NewUser");
-		ap.enterUsernameToSearch(usernameToSearch);
-		ap.selectSearchUserType();
-		ap.clickSearchUser();
+		ap.enterUsernameToSearch(usernameToSearch).selectSearchUserType().clickSearchUser();
 		String actual = ap.verifySearchedUsernameDisplayed();
 		String expected = usernameToSearch;
 		Assert.assertEquals(actual,expected, Constant.ADMINUSERNOTFOUNDERROR);

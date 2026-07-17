@@ -29,11 +29,7 @@ public class ManageContactTest extends Base
 		String phoneNumberValue = rd.getRandomPhoneNumber();
 		String emailIdValue = rd.generateRandomEmailId();
 		String addressValue = ExcelUtility.getStringData(0, 0, "ContactAddress");
-		mp.clickEdit();
-		mp.editPhone(phoneNumberValue);
-		mp.editEmailId(emailIdValue);
-		mp.enterNewAddress(addressValue);
-		mp.clickUpdate();
+		mp.clickEdit().editPhone(phoneNumberValue).editEmailId(emailIdValue).enterNewAddress(addressValue).clickUpdate();
 		String actual = mp.verifyAlertIsDisplayed();
 		String expected = "×\nAlert!\nContact Updated Successfully";
 		Assert.assertEquals(actual,expected, Constant.UPDATECONTACTERROR);
