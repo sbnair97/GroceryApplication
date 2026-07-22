@@ -1,16 +1,19 @@
 package pages;
 
 
-import org.openqa.selenium.JavascriptExecutor;
+//import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManageContactPage 
 {
 
 	public WebDriver driver;
+	PageUtility pu = new PageUtility();
 	public ManageContactPage(WebDriver driver)
 	{
 		this.driver=driver;
@@ -45,8 +48,9 @@ public class ManageContactPage
 	}
 	public ManageContactPage clickUpdate()
 	{
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click();",update);
+		//JavascriptExecutor js = (JavascriptExecutor)driver;
+		//js.executeScript("arguments[0].click();",update);
+		pu.click(driver, update);
 		return this;
 	}
 	public String verifyAlertIsDisplayed()
